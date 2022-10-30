@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
 import styled from 'styled-components';
+import Spline from '@splinetool/react-spline';
 
 const Container = styled.div`
   margin: 50px 0;
@@ -29,7 +30,6 @@ function App() {
     if (event.key === 'Enter') {
       axios.get(url).then((response) => {
         setData(response.data);
-        console.log(response.data);
       });
       setLocation('');
     }
@@ -46,8 +46,40 @@ function App() {
           type='text'
         ></SearchBar>
         <h2>The weather in your location is:</h2>
+        {data.name ? <h1>City: {data.name}</h1> : null}
         {data.main ? <h1>{data.main.temp.toFixed()}°C</h1> : null}
         {data.weather ? <h1>{data.weather[0].main}</h1> : null}
+        {(() => {
+          if (data.weather) {
+            let weather = data.weather[0].main;
+            {
+              console.log(weather);
+            }
+            if (weather === 'Clouds' || weather === 'Atmosphere') {
+              return (
+                <Spline scene='https://prod.spline.design/REYNRiWmqZxYp4Li/scene.splinecode' />
+              );
+            } else if (weather === 'Clear') {
+              return (
+                <Spline scene='https://prod.spline.design/Qeo1PcpVZ-2uMojV/scene.splinecode' />
+              );
+            } else if (
+              weather === 'Thunderstorm' ||
+              weather === 'Drizzle' ||
+              weather === 'Rain' ||
+              weather === 'Snow'
+            ) {
+              return (
+                <Spline scene='https://prod.spline.design/TAt3kkuSG3SX0Ni3/scene.splinecode' />
+              );
+            } else {
+              return (
+                <Spline scene='https://prod.spline.design/REYNRiWmqZxYp4Li/scene.splinecode' />
+              );
+            }
+          }
+        })()}
+        {/* <Spline scene='https://prod.spline.design/7yhuREmHvKsE15L9/scene.splinecode' /> */}
       </Container>
     </div>
   );
