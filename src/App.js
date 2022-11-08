@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import axios from 'axios';
 import styled from 'styled-components';
-import Spline from '@splinetool/react-spline';
+// import Spline from '@splinetool/react-spline';
 
 const Container = styled.div`
   margin: 50px 0;
@@ -57,11 +57,13 @@ function App() {
             }
             if (weather === 'Clouds' || weather === 'Atmosphere') {
               return (
-                <Spline scene='https://prod.spline.design/REYNRiWmqZxYp4Li/scene.splinecode' />
+                // <Spline scene='https://prod.spline.design/REYNRiWmqZxYp4Li/scene.splinecode' />
+                <img src='https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2xvdWR5JTIwc2t5fGVufDB8fDB8fA%3D%3D&w=1000&q=80'></img>
               );
             } else if (weather === 'Clear') {
               return (
-                <Spline scene='https://prod.spline.design/Qeo1PcpVZ-2uMojV/scene.splinecode' />
+                // <Spline scene='https://prod.spline.design/Qeo1PcpVZ-2uMojV/scene.splinecode' />
+                <img src='https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3doeS1pcy1za3ktYmx1ZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgyOH19fQ=='></img>
               );
             } else if (
               weather === 'Thunderstorm' ||
@@ -70,11 +72,13 @@ function App() {
               weather === 'Snow'
             ) {
               return (
-                <Spline scene='https://prod.spline.design/TAt3kkuSG3SX0Ni3/scene.splinecode' />
+                // <Spline scene='https://prod.spline.design/TAt3kkuSG3SX0Ni3/scene.splinecode' />
+                <img src='https://hips.hearstapps.com/hmg-prod/images/its-raining-heavily-wearing-an-umbrella-during-the-royalty-free-image-1660153348.jpg'></img>
               );
             } else {
               return (
-                <Spline scene='https://prod.spline.design/REYNRiWmqZxYp4Li/scene.splinecode' />
+                // <Spline scene='https://prod.spline.design/REYNRiWmqZxYp4Li/scene.splinecode' />
+                <img src='https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3doeS1pcy1za3ktYmx1ZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgyOH19fQ=='></img>
               );
             }
           }
